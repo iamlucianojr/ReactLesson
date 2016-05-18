@@ -14,7 +14,27 @@
 		}
 	});
 
-	React.render(<HelloWorld />, document.body);
+	var Avatar = React.createClass({
+
+		getDefaultProps: function() {
+
+			return {
+				path: 'http://lorempixel.com/547/512/abstract'
+			};
+		},
+
+		render: function() {
+			return (
+				<div> 
+					<a href={this.props.path}>
+						<img src={this.props.path} />
+					</a>
+				</div>
+			);		
+		}
+	});
+
+	React.render(<Avatar path="http://lorempixel.com/547/512/abstract" />, document.body);
 </script>
 </body>
 </html>
